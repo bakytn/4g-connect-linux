@@ -1,23 +1,15 @@
 4g-connect-linux
 ================
 
-Huawei 4g modem E3276 (and possibly others) connect script 
-by Janhouse (Janis Jansons) - janis.jansons@janhouse.lv
+This is a fork from Janis Jansons repo (see above).
 
-This has been tested with Latvian based operator LMT on a laptop with  Archlinux 
-running kernel 3.9.5.
-It should work for many other modems and networks.
-Just make sure you have a recent kernel with working driver (>3.9.4 or something like that).
+Confirmed to work great in: Ubuntu 13.10 (fully updated to date:20 Nov 2013)
 
-Modem:
-
-```Bus 001 Device 020: ID 12d1:1506 Huawei Technologies Co., Ltd. E398 LTE/UMTS/GSM Modem/Networkcard```
+Device: `Huawei E3276` Modem from Kyrgyz ISP `Saima4G`
 
 
-I made this script because at the time of writing ModemManager and wvdial does
-not support these USB modems and there isn't much information on how to get it
-working.
+It's the following changes:
 
-Basically it is really simple and you can probably do it without this script but
-I wanted some extra automation and quality monitoring.
-
+1. use `dhclient` instead of `dhcpd`
+2. remove code of getting ip from the modem
+3. added device registration script
